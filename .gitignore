@@ -1,0 +1,6 @@
+dist
+node_modules
+projects
+package-lock.json
+robots.txt
+sitemap.xml

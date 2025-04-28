@@ -1,0 +1,34 @@
+RewriteEngine on
+
+# Przekierowanie z www na bez www
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+# Wymuszenie HTTPS
+RewriteCond %{ENV:HTTPS} !on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# Usunięcie index.html z URL
+RewriteRule ^index\.html$ / [NC,R=301,L]
+
+# Przekierowanie /privacyPolicy.html na /polityka-prywatnosci
+RewriteRule ^privacyPolicy\.html$ /polityka-prywatnosci [R=301,L]
+
+# /polityka-prywatnosci serwuje privacyPolicy.html
+RewriteRule ^polityka-prywatnosci$ /privacyPolicy.html [L]
+
+# Przekierowanie /404.html na /Error404
+RewriteRule ^404\.html$ /Error404 [R=301,L]
+
+# /Error404 serwuje 404.html
+RewriteRule ^Error404$ /404.html [L]
+
+# Własna strona błędu 404
+ErrorDocument 404 /Error404
+
+# Jeśli nie istnieje plik ani katalog i NIE jest to Error404 -> wyślij 404
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/Error404$
+RewriteRule .* /Error404 [L,R=404]
+

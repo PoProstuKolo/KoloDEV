@@ -9,18 +9,11 @@
 		position: relative;
 		z-index: 0;
 
-		&::before {
-			content: '';
-			position: absolute;
-			top: 30%;
-			left: 50%;
-			transform: (translate(-50%, -50%));
-			width: 150px;
-			height: 150px;
-			border-radius: 100%;
-			background-color: #b99a45;
-			filter: blur(100px);
-			z-index: -1;
+		&__desc {
+			color: #adadad;
+			font-size: 1.75rem;
+			margin-top: 2em;
+			line-height: 1.5;
 		}
 
 		.wrapper {
@@ -41,23 +34,17 @@
 		}
 
 		&__title {
-			margin-top: 1em;
+			margin: 1em auto 0;
 			text-transform: uppercase;
 			font-size: 3rem;
 			text-align: center;
 			font-weight: bold;
+			max-width: 250px;
 		}
 
 		&__name {
 			color: #b99a45;
 			text-shadow: 3px 3px 0px #000;
-		}
-
-		&__desc {
-			color: #adadad;
-			font-size: 1.75rem;
-			margin-top: 2em;
-			line-height: 1.5;
 		}
 
 		&__icon {
@@ -79,6 +66,20 @@
 					transform: translateY(1em);
 				}
 			}
+		}
+
+		&__blur-b g {
+			content: '';
+			position: absolute;
+			top: 30%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 150px;
+			height: 150px;
+			border-radius: 100%;
+			background-color: #b99a45;
+			filter: blur(100px);
+			z-index: -1;
 		}
 	}
 
@@ -366,6 +367,7 @@
 
 				&__checkbox {
 					max-width: 50px;
+					min-width: 10px;
 				}
 
 				&__text {
@@ -426,6 +428,7 @@
 
 			&__title {
 				font-size: 3.5rem;
+				max-width: 300px;
 			}
 
 			&__icon {
@@ -504,8 +507,14 @@
 		.header {
 			padding: 5em 4em;
 
-			&::before {
+			&__blur-bg {
 				top: 35%;
+			}
+
+			&__desc {
+				font-size: 2rem;
+				width: 85%;
+				margin: 1em auto 0;
 			}
 
 			&__logo {
@@ -518,12 +527,7 @@
 
 			&__title {
 				font-size: 4rem;
-			}
-
-			&__desc {
-				font-size: 2rem;
-				width: 85%;
-				margin: 1em auto 0;
+				max-width: 350px;
 			}
 
 			&__icon {

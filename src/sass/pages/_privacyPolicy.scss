@@ -47,58 +47,6 @@
 			}
 		}
 	}
-
-	// STOPKA - FOOTER
-	.footer {
-		background-color: #090909;
-		padding: 3em 2em;
-
-		&__right {
-			display: none;
-		}
-
-		&__brand {
-			font-size: 2.2rem;
-			margin: 0.5em 0;
-		}
-
-		&__text {
-			font-size: 1.8rem;
-			margin-bottom: 1em;
-		}
-
-		&__year {
-			margin-bottom: 2em;
-		}
-
-		&__links {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			gap: 2.5em;
-			margin: 3em 0 1em;
-		}
-
-		&__link {
-			color: #b99a45;
-		}
-
-		&__link-icon {
-			width: 40px;
-			height: auto;
-		}
-
-		&__authors {
-			margin-top: 1em;
-			font-size: 1.6rem;
-			display: flex;
-			flex-direction: column;
-
-			&-link {
-				color: gray;
-			}
-		}
-	}
 }
 
 // MEDIA QUERIES

@@ -18,6 +18,10 @@ body::-webkit-scrollbar-thumb {
 	border-radius: 4px;
 }
 
+body::-webkit-scrollbar-thumb:vertical:hover {
+	background: #5f5023;
+}
+
 @supports not selector(::-webkit-scrollbar) {
 	body {
 		scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);

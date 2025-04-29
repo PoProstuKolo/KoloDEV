@@ -29,6 +29,10 @@ const paths = {
 		src: './src/img/**/*.{jpg,jpeg,png,gif,svg}',
 		dest: './dist/img',
 	},
+	fonts: {
+		src: './src/fonts/**/*.{woff,woff2,ttf,otf,eot,svg}',
+		dest: './dist/fonts',
+	},
 	dist: {
 		src: './dist',
 	},
@@ -65,6 +69,11 @@ function convertImages(done) {
 	done()
 }
 
+function copyFonts(done) {
+	src(paths.fonts.src).pipe(dest(paths.fonts.dest))
+	done()
+}
+
 function handleKits(done) {
 	src(paths.html.src).pipe(kit()).pipe(dest('./'))
 	done()
@@ -94,7 +103,7 @@ function watchForChanges(done) {
 	done()
 }
 
-const mainFunctions = parallel(handleKits, buildStyles, javaScript)
+const mainFunctions = parallel(handleKits, buildStyles, javaScript, copyFonts)
 exports.convertImages = convertImages
 exports.cleanStuff = cleanStuff
 exports.default = series(mainFunctions, startBrwowserSync, watchForChanges)

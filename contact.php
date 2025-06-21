@@ -3,7 +3,7 @@
 $name = $_POST["name"]; // input name="name"
 $from = $_POST["email"]; // input name="email"
 $subject = $_POST["subject"]; // input name="subject"
-$to = "kontakt@kolodev.pl"; // adres, na który ma zostać wysłany mail
+$to = "poprostukolo@gmail.com"; // adres, na który ma zostać wysłany mail
 $message = $_POST["message"]; // textarea name="message"
 
 $txt = "Imię: " . $name . "\r\n" . "Email: " . $from . "\r\n" . "\r\n" . "Treść: " . $message;
